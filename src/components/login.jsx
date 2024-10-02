@@ -44,6 +44,7 @@ const Login = () => {
             
           if(result.data.message._id) {
             localStorage.setItem('token', result.data.token );
+            seterror(false);
             navigateLogIn("/home");
           }
           
