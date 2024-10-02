@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useReducer, useEffect } from "react";
 import axios from "axios";
 import { docsDb } from "./firebase.config";
+import bckIcn from '../assets/left-arrow.png'
 
 const AddDocs = () => {
 
@@ -114,6 +115,9 @@ const AddDocs = () => {
 
 return(
     <div className="addDocs">
+        <Link className="back" to='/home'>
+        <img src={bckIcn} alt="" />
+        </Link>
         <h2 className="statliche">Docs:</h2>
         <div className="docsDisplay center">
             {

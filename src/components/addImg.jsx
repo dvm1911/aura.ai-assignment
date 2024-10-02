@@ -1,8 +1,9 @@
 import { useReducer, useEffect } from "react";
 import { docsDb } from "./firebase.config";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import defImg from '../assets/Default_pfp.png';
+import bckIcn from '../assets/left-arrow.png'
 
 const AddImg = () => {
 
@@ -77,11 +78,12 @@ const AddImg = () => {
             axios.put('https://assignment-aura-ai.onrender.com/api/auth/user/update/'+id, { userPfp: `${reqFields.imgURL}`})
         }
     }, [reqFields.imgURL])
-    
-    
 
     return (
         <div className="uploadImg">
+        <Link className="back" to='/home'>
+        <img src={bckIcn} alt="" />
+        </Link>
         <div id="displayContainer">
             {
                 reqFields.imgFile ? (
@@ -98,7 +100,7 @@ const AddImg = () => {
         <button onClick={upImg} className="statliche">
             UPLOAD
         </button>
-
+        
         </div>
     )
 }
