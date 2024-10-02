@@ -48,7 +48,7 @@ useEffect(() => {
   if(token){
       userDetails();
   }
-}, [token]);
+}, [token, reqFields]);
 
 
 const logOutHandler = () => {

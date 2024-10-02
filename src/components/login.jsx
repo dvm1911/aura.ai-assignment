@@ -1,5 +1,5 @@
 import {Link, useNavigate } from 'react-router-dom';
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import axios from 'axios';
 
 
@@ -7,7 +7,7 @@ const Login = () => {
 
   const navigateLogIn = useNavigate();
 
-    
+    const [ error, seterror ] = useState(false);
         
     const initialreqFields = {
         userEmail: "",
@@ -49,6 +49,7 @@ const Login = () => {
           
         } catch (error) {
           console.log(error);
+          seterror(true);
         }
       };
 
@@ -64,6 +65,8 @@ const Login = () => {
     
         <label htmlFor="password">Password#</label>
         <input onChange={(e) => {reqFieldsDispatch({ type: "userPasswordInp", payload: e.target.value})}}  type="password"/>
+
+        { error && <p className="err poppins">err: Invalid Email or password</p>}
     
         <button onClick={onClickPost} className='loginSubmit statliche'>
           Login
