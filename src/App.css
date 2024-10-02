@@ -1,0 +1,413 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.statliche{
+  font-family: "Staatliches", sans-serif;
+}
+
+.poppins{
+  font-family: "Poppins", sans-serif;
+}
+
+.outfit{
+  font-family: "Outfit", sans-serif;
+}
+
+.outside{
+  display: flex;
+  flex-direction: column;
+}
+
+header>h1{
+  font-weight: 400;
+  font-size: 3em;
+  height: 54px;
+  overflow: hidden;
+}
+
+header>h3{
+  font-weight: 200;
+
+}
+
+main{
+  border: 2px solid white;
+  border-radius: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 10px;
+}
+
+h2{
+  font-weight: 400;
+  margin-left: 10px;
+  font-size: 28px;
+  height: 36px; 
+}
+
+.logIntxt{
+  font-weight: 300;
+  margin-left: 10px;
+  font-size: 16px; 
+}
+
+.inputField{
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Outfit", sans-serif;
+  margin-top: 16px;
+  margin-left: 10px; 
+}
+
+input{
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 18px;
+  padding: 6px;
+  margin: 6px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: medium;
+}
+
+button{
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  border-radius: 24px;
+  padding: 6px;
+  margin: 24px;
+  margin-bottom: 6px;
+  width: 4.5em;
+  align-self: center;
+  cursor: pointer;
+}
+
+button:hover{
+  color: black;
+  background-color: white;
+}
+
+.newSignup{
+  display: flex;
+  font-weight: 300;
+  font-size: 16px;
+  align-self: center; 
+  gap: 3px;
+}
+
+.newSignupLink{
+  text-decoration: underline;
+  cursor: pointer;
+  color: silver;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact{
+  font-size: medium;
+  font-weight: 300;
+}
+
+.contactEmail{
+  font-size: small;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.profile{
+  display: flex;
+  flex-direction: column;
+}
+
+.id{
+  font-size: 36px;
+}
+
+.noToken{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainPg{
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+.noTokenbtn{
+  margin: 2px;
+  margin-bottom: 24px;
+}
+
+.pfp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  border: 2px solid white;
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+}
+
+.pfp>img{
+  border-radius: 50%;
+  width: 96%;
+  height: 96%;
+}
+
+.addImgBtn{
+  border-radius: 50%;
+  margin: 0;
+  padding: 2px;
+
+}
+
+.displayName{
+  display: flex;
+  font-size: 1.5em;
+  gap: 8px;
+}
+
+.documents{
+  display: flex;
+  font-size: 1.5em;
+  flex-direction: column;
+}
+
+.err{
+  color: red;
+  font-size: 10px;
+  align-self: center;
+  text-align: center;
+}
+
+.addimg{
+ border: 0px;
+ margin: 0px;
+ padding: 0px;
+ width: 280px;
+ margin-top: 28px;
+}
+
+::-webkit-file-upload-button{
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  border-radius: 24px;
+  padding: 6px;
+  margin-bottom: 6px;
+  width: 154px;
+  cursor: pointer;
+  font-family: "Staatliches", sans-serif;
+}
+
+::-webkit-file-upload-button:hover{
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+#displayContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 196px;
+  height: 196px;
+  padding: 4px;
+}
+
+.uploadImg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#displayContainer>img{
+  border-radius: 50%;
+  width: 96%;
+  height: 96%;
+}
+
+.center{
+  align-self: center;
+}
+
+.addDocs{
+  display: flex;
+  flex-direction: column;
+}
+
+.docsDisplay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2x solid white;
+  border-radius: 12px;
+  width: 280px;
+  height: 380px;
+}
+
+.docsDisplay>img{
+  border-radius: 12px;
+  width: 96%;
+  height: 96%;
+}
+.docsDisplay>video{
+  border-radius: 12px;
+  width: 373px;
+  height: 96%;
+}
+
+.docsDisplay>embed{
+  border-radius: 12px;
+  width: 96%;
+  height: 96%;
+}
+
+
+.addDocsInp{
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 280px;
+  margin-top: 28px;
+ }
+ 
+ ::-webkit-file-upload-button{
+   color: white;
+   background-color: black;
+   border: 1px solid white;
+   font-size: 28px;
+   letter-spacing: 0.04em;
+   border-radius: 24px;
+   padding: 6px;
+   margin-bottom: 6px;
+   width: 154px;
+   cursor: pointer;
+   font-family: "Staatliches", sans-serif;
+ }
+ 
+ ::-webkit-file-upload-button:hover{
+   color: black;
+   background-color: white;
+   cursor: pointer;
+ }
+
+ .allDocs{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+ }
+
+ .allDocs>p{
+  font-weight: 100;
+  font-size: small;
+  overflow: hidden;
+ }
+
+ .fname{
+  width: 70%;
+  height: 24px;
+ 
+ }
+
+ a>img{
+  height: 19px;
+ }
+
+ .test{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .ce{
+  font-style: italic;
+  text-align: center;
+  font-size: 19px;
+  margin-top: 16px;
+ }
+
+ .sce{
+  font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+ }
+
+ .loading-dots {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  animation: loading 1s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
