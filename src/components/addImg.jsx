@@ -41,6 +41,12 @@ const AddImg = () => {
                     ...state,
                     imgURL: action.payload
                 }
+
+            case "setProgress":
+                return {
+                    ...state,
+                    uploadStatus: action.payload
+                }
             default:
                 return state
         }
@@ -66,7 +72,10 @@ const AddImg = () => {
         if(reqFields.imgFile && reqFields.userData){
                 docsDb.ref(`users/${reqFields.userData.userEmail}/pfp`)
                 .put(reqFields.imgFile)
-                .on("state_changed", alert("success"), alert, () => {
+                .on("state_changed", (upData) => {
+                    if (upData.bytesTransferred && upData.totalBytes) {
+                        reqFieldsDispatch({type:"setProgress", payload:(upData.bytesTransferred / upData.totalBytes) * 100})
+                      }
                     docsDb.ref(`users/${reqFields.userData.userEmail}`).child(`pfp`)
                     .getDownloadURL()
                     .then((url) => {reqFieldsDispatch({type: "setImgURL", payload: url})})
@@ -98,6 +107,9 @@ const AddImg = () => {
             }
         </div>
         <input onChange={displayImg} className="addimg" type="file" accept="Image"/>
+        <p className="outfit center progress">
+            { reqFields.uploadStatus && `${reqFields.uploadStatus}% done.`}
+        </p>
 
         <button onClick={upImg} className="statliche">
             UPLOAD
