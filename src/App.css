@@ -416,3 +416,7 @@ footer{
   align-self: start;
   cursor: pointer;
 }
+
+.googleSignin>button{
+  width: 196px;
+}

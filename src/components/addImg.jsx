@@ -81,8 +81,6 @@ const AddImg = () => {
                     .then((url) => {reqFieldsDispatch({type: "setImgURL", payload: url})})
                 });
             }};
-        
-            console.log(reqFields.imgURL)
 
     useEffect( () => {
         if(reqFields.imgURL){
