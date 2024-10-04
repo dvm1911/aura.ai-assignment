@@ -422,3 +422,8 @@ footer{
   border: 2px solid white;
   border-radius: 18px;
 }
+
+.glogin{
+  align-self: center;
+  margin: 16px;
+}

@@ -125,7 +125,7 @@ const onClickPost = async (e) => {
         Sign Up
       </button>
 
-      <div>
+      <div className="glogin">
         <GoogleLogin
         onSuccess={onSuccess}
         onFailure={onFailure}

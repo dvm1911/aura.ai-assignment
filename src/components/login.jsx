@@ -106,7 +106,7 @@ const Login = () => {
           Login
         </button>
 
-        <div>
+        <div className="glogin">
         <GoogleLogin
         onSuccess={onSuccess}
         onFailure={onFailure}
