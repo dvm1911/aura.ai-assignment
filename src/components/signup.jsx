@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useReducer, useState, useEffect } from "react";
 import axios from "axios";
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin, GoogleOAuthProvider } from "react-google-login";
 import { gapi } from "gapi-script";
 const clientId = "453687433752-p0jqss0kno5dliieoh98bl1gvfp8euea.apps.googleusercontent.com"
 
@@ -9,6 +9,8 @@ const clientId = "453687433752-p0jqss0kno5dliieoh98bl1gvfp8euea.apps.googleuserc
 const Signup = () => {
 
   const [ err, setErr ] = useState(false);
+
+  <GoogleOAuthProvider clientId={clientId}>...</GoogleOAuthProvider>;
 
   useEffect(() => {
     function start() {
