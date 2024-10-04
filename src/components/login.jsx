@@ -1,29 +1,14 @@
 import {Link, useNavigate } from 'react-router-dom';
 import { useReducer, useState, useEffect } from 'react';
 import axios from 'axios';
-import { GoogleLogin, GoogleOAuthProvider } from "react-google-login";
-import { gapi } from "gapi-script";
-const clientId = "453687433752-p0jqss0kno5dliieoh98bl1gvfp8euea.apps.googleusercontent.com"
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
+
 
 
 const Login = () => {
 
   const navigateLogIn = useNavigate();
-
-  <GoogleOAuthProvider clientId={clientId}>...</GoogleOAuthProvider>;
-
-  useEffect(() => {
-    function start() {
-       gapi.client.init(
-           {
-               clientId: clientId,
-               scope: ""
-           }
-       )
-    };
-   
-    gapi.load('client:auth2', start)
-   })
 
     const [ error, seterror ] = useState(false);
         
@@ -54,32 +39,34 @@ const Login = () => {
     const [ reqFields, reqFieldsDispatch ] = useReducer( setreqFields, initialreqFields );
 
     const onSuccess = async (res) => {
+      const token = await `${res.credential}`;
+      const decode = jwtDecode(token);
       const profileObj = {
-          userEmail: res.profileObj.email,
-          userPassword:res.profileObj.googleId
+          userEmail: decode.email,
+          userPassword: decode.sub
       }
-
+      
       try {
-          const res = await axios.post('https://assignment-aura-ai.onrender.com/api/auth/login', profileObj)
+        const res = await axios.post('https://assignment-aura-ai.onrender.com/api/auth/login', profileObj)
 
-          const result = await res;
-            
-          if(result.data.message._id) {
-            localStorage.setItem('token', result.data.token );
-            seterror(false);
-            navigateLogIn("/home");
-          }
+        const result = await res;
           
-        } catch (error) {
-          console.log(error);
-          seterror(true);
+        if(result.data.message._id) {
+          localStorage.setItem('token', result.data.token );
+          seterror(false);
+          navigateLogIn("/home");
         }
-   
+        
+      } catch (error) {
+        console.log(error);
+        seterror(true);
+      }
   }
   
   const onFailure = (res) => {
       console.log("Login FAILED!")
   }
+  
 
     const onClickPost = async (event) => {
         event.preventDefault();
@@ -119,11 +106,8 @@ const Login = () => {
           Login
         </button>
 
-        <div id="googleSignin">
+        <div>
         <GoogleLogin
-        className="googlestyle"
-        clientId={clientId}
-        buttonText="Log in" 
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}

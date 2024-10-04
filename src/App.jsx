@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import { useReducer } from 'react';
 
 import './App.css'
 
