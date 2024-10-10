@@ -3,13 +3,12 @@ import firebase from "firebase/compat/app";
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCB_WqC55mGO3iW0y_885QduJNM5WEXV7g",
-  authDomain: "aura-ai-8310f.firebaseapp.com",
-  projectId: "aura-ai-8310f",
-  storageBucket: "aura-ai-8310f.appspot.com",
-  messagingSenderId: "157301921692",
-  appId: "1:157301921692:web:c56a1cd511e4a8d1d4da59",
-  measurementId: "G-XG5F5GMCQH"
+  apiKey: "AIzaSyAdbi3Cy17TduKcLrtFHh7WQge78f1r4gU",
+  authDomain: "docsave-1037a.firebaseapp.com",
+  projectId: "docsave-1037a",
+  storageBucket: "docsave-1037a.appspot.com",
+  messagingSenderId: "156424469641",
+  appId: "1:156424469641:web:a57bc838a54b03a5fc5a58"
 };
 
 // Initialize Firebase

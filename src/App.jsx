@@ -14,7 +14,7 @@ function App() {
     <>
     <div className='outside'>
     <header className='poppins'>
-    <h1>aura.ai</h1>
+    <h1>docsave.io</h1>
     <h3>Assignment</h3>
     </header>
     <main>
